@@ -21,6 +21,7 @@ export const executiveSchema = z.object({
       message:
         "Please enter a valid URL (must start with http:// or https://).",
     }),
+  panelSpeakerInterest: z.string().trim().optional().or(z.literal("")),
   currentRole: z.string().trim().min(1, "Please select your current role."),
   currentRoleOther: z.string().trim().optional().or(z.literal("")),
   companyName: z.string().trim().min(1, "Company name is required."),
@@ -44,11 +45,9 @@ export const executiveSchema = z.object({
   referredBy: z.string().trim().optional().or(z.literal("")),
   dietaryNeeds: z.string().trim().optional().or(z.literal("")),
 
-  agree: z
-    .boolean()
-    .refine((v) => v === true, {
-      message: "You must agree to the terms to proceed.",
-    }),
+  agree: z.boolean().refine((v) => v === true, {
+    message: "You must agree to the terms to proceed.",
+  }),
 
   // spam trap (should stay empty)
   website: z.string().optional().or(z.literal("")),

@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMemo, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 
 import { Button } from "../../components/ui/Button";
 import { cn } from "../../lib/cn";
@@ -24,6 +24,8 @@ import {
   CheckboxItem,
   FieldHint,
   FieldLabel,
+  RadioItem,
+  RadioRow,
   Select,
   SubmitBar,
   TextArea,
@@ -57,12 +59,19 @@ export function ExecutiveApplicationForm({
     },
   });
 
-  const aiChallenge = form.watch("aiAdoptionChallenge") ?? "";
-  const aiStage = form.watch("aiDeploymentStage") ?? "";
-  const currentRole = form.watch("currentRole") ?? "";
-  const industry = form.watch("industry") ?? "";
-  const location = form.watch("companyLocation") ?? "";
-  const heardAbout = form.watch("heardAbout") ?? "";
+  const aiChallenge =
+    useWatch({ control: form.control, name: "aiAdoptionChallenge" }) ?? "";
+  const aiStage =
+    useWatch({ control: form.control, name: "aiDeploymentStage" }) ?? "";
+  const currentRole =
+    useWatch({ control: form.control, name: "currentRole" }) ?? "";
+  const industry = useWatch({ control: form.control, name: "industry" }) ?? "";
+  const location =
+    useWatch({ control: form.control, name: "companyLocation" }) ?? "";
+  const heardAbout =
+    useWatch({ control: form.control, name: "heardAbout" }) ?? "";
+  const panelSpeakerInterest =
+    useWatch({ control: form.control, name: "panelSpeakerInterest" }) ?? "";
 
   const shouldShowRoleOther = useMemo(
     () => isOther(currentRole),
@@ -86,7 +95,7 @@ export function ExecutiveApplicationForm({
 
     const payload = {
       // Formspree helpers (improve inbox UX)
-      _subject: "Executive Application - VertexGrid Event 1",
+      _subject: "Executive Application - VertexGrid Exchange - AI Edition",
       _replyto: values.email,
       _gotcha: values.website,
       formType: "executive",
@@ -201,6 +210,26 @@ export function ExecutiveApplicationForm({
         {errors.linkedinUrl ? (
           <FieldHint tone="error">{errors.linkedinUrl.message}</FieldHint>
         ) : null}
+      </div>
+
+      <div>
+        <FieldLabel>
+          Are you interested in becoming a panel Speaker with us?
+        </FieldLabel>
+        <RadioRow>
+          <RadioItem
+            label="Yes"
+            checked={panelSpeakerInterest === "Yes"}
+            value="Yes"
+            {...register("panelSpeakerInterest")}
+          />
+          <RadioItem
+            label="No"
+            checked={panelSpeakerInterest === "No"}
+            value="No"
+            {...register("panelSpeakerInterest")}
+          />
+        </RadioRow>
       </div>
 
       <div>

@@ -16,8 +16,8 @@ export function LandingForms({
     openForm === "sponsor" ? "Sponsor Inquiry" : "Executive Application";
   const description =
     openForm === "sponsor"
-      ? "Sponsorship inquiry form for VertexGrid Event 1."
-      : "Executive application form for VertexGrid Event 1.";
+      ? "Sponsorship inquiry form for VertexGrid Exchange - AI Edition ."
+      : "Executive application form for VertexGrid Exchange - AI Edition.";
 
   return (
     <FormDialog

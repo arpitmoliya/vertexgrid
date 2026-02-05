@@ -703,7 +703,7 @@ export function Logo({
   textClassName?: string;
 }) {
   return (
-    <div className={cn("inline-flex items-center gap-2", className)}>
+    <div className={cn("inline-flex items-center flex-col gap-2", className)}>
       <LogoMark className={markClassName} />
       <span
         className={cn(
@@ -712,6 +712,9 @@ export function Logo({
         )}
       >
         VertexGrid
+      </span>
+      <span className="text-sm text-zinc-500">
+        INTELLIGENCE. INSIGHTS. INTERACTIONS.
       </span>
     </div>
   );

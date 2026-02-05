@@ -186,8 +186,8 @@ export const sponsorshipCopy = {
     "Raw anonymised data for internal analysis",
   ],
   sponsorsReceiveFooter:
-    "Traditional analyst reports charge lakhs for survey-based data that takes months. Vertex Grid delivers practitioner intelligence in 14 days.",
-  protectsTitle: "How Vertex Grid protects conversation quality:",
+    "Traditional analyst reports charge lakhs for survey-based data that takes months. VertexGrid delivers practitioner intelligence in 14 days.",
+  protectsTitle: "How VertexGrid protects conversation quality:",
   protects: [
     "Invite-only participation",
     "Strict confidentiality norms",

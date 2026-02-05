@@ -108,7 +108,7 @@ export function SponsorInquiryForm({
 
     const payload = {
       // Formspree helpers (improve inbox UX)
-      _subject: "Sponsorship Inquiry - VertexGrid Event 1",
+      _subject: "Sponsorship Inquiry - VertexGrid Exchange - AI Edition",
       _replyto: values.email,
       _gotcha: values.website,
       formType: "sponsor",
@@ -170,8 +170,9 @@ export function SponsorInquiryForm({
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="text-sm text-zinc-600">
-        Interested in sponsoring VertexGrid Event 1? Complete this form and
-        we’ll send you the full sponsorship package within 24 hours.
+        Interested in sponsoring VertexGrid Exchange - AI Edition ? Complete
+        this form and we’ll send you the full sponsorship package within 24
+        hours.
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">

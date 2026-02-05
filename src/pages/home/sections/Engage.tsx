@@ -55,6 +55,9 @@ export function Engage({
                   <div className="text-sm font-semibold text-zinc-900">
                     {bottom.title}
                   </div>
+                  <div className="italic text-sm text-zinc-600">
+                    Apply to Attend and select 'Panel Interest'
+                  </div>
                   <div className="mt-3 text-sm text-zinc-600">
                     {bottom.body}
                   </div>
