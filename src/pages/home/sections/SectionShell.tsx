@@ -12,12 +12,14 @@ export function SectionShell({
       {patternImage ? (
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-20"
+          className="pointer-events-none absolute inset-0 mix-blend-multiply -right-1/6"
           style={{
             backgroundImage: `url(${patternImage})`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
+            backgroundRepeat: "repeat-y",
+            backgroundPosition: "center right",
+            // Use a fixed-ish watermark size so it shows in "empty" space
+            // without taking over the whole section.
+            backgroundSize: "min(1100px, 92vw) auto",
           }}
         />
       ) : null}

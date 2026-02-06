@@ -2,7 +2,7 @@ export const homeImages = {
   /** Hero background (meeting room) */
   hero: "/images/f58d3266ffe25589fcf925979aa72375b2c3ad2d.jpg",
   /** Section background motif */
-  pattern: "/images/e9df33be76f1eb01dbbe702f223057b83bce47fc.png",
+  pattern: "/images/watermark.png",
   /** Photo: conference room workshop */
   roomMatters: "/images/a51a015850a4c1efed42eeb5372d6678e521544a.png",
   /** Photo: handshake */

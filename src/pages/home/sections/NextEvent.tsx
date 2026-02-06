@@ -168,7 +168,7 @@ export function NextEvent({
   copy,
 }: {
   id?: string;
-  patternImage: string;
+  patternImage?: string;
   copy: {
     kicker: string;
     titlePrefix: string;

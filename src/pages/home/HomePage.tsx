@@ -77,7 +77,6 @@ export function HomePage() {
 
       <NextEvent
         id="upcoming-events"
-        patternImage={homeImages.pattern}
         copy={nextEventCopy}
       />
 
