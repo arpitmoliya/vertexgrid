@@ -164,11 +164,9 @@ function ScheduleColumn({
 
 export function NextEvent({
   id,
-  patternImage,
   copy,
 }: {
   id?: string;
-  patternImage?: string;
   copy: {
     kicker: string;
     titlePrefix: string;
@@ -184,11 +182,7 @@ export function NextEvent({
   const iconOrder: Array<"pin" | "clock" | "user"> = ["pin", "clock", "user"];
 
   return (
-    <SectionShell
-      id={id}
-      patternImage={patternImage}
-      className="bg-[#f4f6f8] py-14 sm:py-20"
-    >
+    <SectionShell id={id} className="bg-[#f4f6f8] py-14 sm:py-20">
       <Container>
         <div className="mx-auto max-w-6xl text-center">
           <div className="text-4xl font-semibold tracking-[0.35em] text-zinc-900">
