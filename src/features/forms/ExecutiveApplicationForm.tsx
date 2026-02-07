@@ -54,6 +54,7 @@ export function ExecutiveApplicationForm({
     reValidateMode: "onChange",
     defaultValues: {
       phoneCountryCode: "+91",
+      panelSpeakerInterest: "",
       agree: false,
       website: "",
     },
@@ -140,7 +141,7 @@ export function ExecutiveApplicationForm({
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isValid },
   } = form;
 
   return (
@@ -471,10 +472,10 @@ export function ExecutiveApplicationForm({
       <SubmitBar>
         <Button
           type="submit"
-          disabled={!form.formState.isValid || isSubmitting}
+          disabled={!isValid || isSubmitting}
           className={cn(
             "h-14 w-full rounded-xl text-white",
-            form.formState.isValid
+            isValid
               ? "bg-[#0B1B4A] hover:bg-[#0B1B4A]/90 active:bg-[#0B1B4A]/85"
               : "bg-blue-300/70 hover:bg-blue-300/70 active:bg-blue-300/70",
             isSubmitting && "opacity-80"

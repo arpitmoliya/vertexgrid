@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { Button } from "../../components/ui/Button";
@@ -64,6 +64,13 @@ export function SponsorInquiryForm({
       website: "",
     },
   });
+
+  // These fields are driven by custom checkbox UI + `setValue` (no native input),
+  // so we register them explicitly to keep RHF validation state in sync.
+  useEffect(() => {
+    form.register("targetIndustries");
+    form.register("primaryGoals");
+  }, [form]);
 
   const companyType = form.watch("companyType") ?? "";
   const primaryProductCategory = form.watch("primaryProductCategory") ?? "";
@@ -164,7 +171,7 @@ export function SponsorInquiryForm({
     register,
     handleSubmit,
     setValue,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isValid },
   } = form;
 
   return (
@@ -348,7 +355,10 @@ export function SponsorInquiryForm({
                 const next = new Set(form.getValues("targetIndustries") ?? []);
                 if (e.target.checked) next.add(o);
                 else next.delete(o);
-                setValue("targetIndustries", Array.from(next));
+                setValue("targetIndustries", Array.from(next), {
+                  shouldDirty: true,
+                  shouldValidate: true,
+                });
               }}
             />
           ))}
@@ -452,7 +462,10 @@ export function SponsorInquiryForm({
                 const next = new Set(form.getValues("primaryGoals") ?? []);
                 if (e.target.checked) next.add(o);
                 else next.delete(o);
-                setValue("primaryGoals", Array.from(next));
+                setValue("primaryGoals", Array.from(next), {
+                  shouldDirty: true,
+                  shouldValidate: true,
+                });
               }}
             />
           ))}
@@ -592,10 +605,10 @@ export function SponsorInquiryForm({
       <SubmitBar>
         <Button
           type="submit"
-          disabled={!form.formState.isValid || isSubmitting}
+          disabled={!isValid || isSubmitting}
           className={cn(
             "h-14 w-full rounded-xl text-white",
-            form.formState.isValid
+            isValid
               ? "bg-[#0B1B4A] hover:bg-[#0B1B4A]/90 active:bg-[#0B1B4A]/85"
               : "bg-blue-300/70 hover:bg-blue-300/70 active:bg-blue-300/70",
             isSubmitting && "opacity-80"
