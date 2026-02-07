@@ -5,12 +5,10 @@ import { SectionShell } from "./SectionShell";
 
 export function Attendee({
   id,
-  patternImage,
   copy,
   onApplyToAttend,
 }: {
   id?: string;
-  patternImage: string;
   copy: {
     titlePrefix: string;
     titleBrand: string;
@@ -24,7 +22,8 @@ export function Attendee({
   return (
     <SectionShell
       id={id}
-      patternImage={patternImage}
+      watermarkLeft="left"
+      waterMarkSize={500}
       className="bg-[#f4f6f8] py-14 sm:py-20"
     >
       <Container>

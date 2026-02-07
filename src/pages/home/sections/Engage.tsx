@@ -4,11 +4,9 @@ import { SectionShell } from "./SectionShell";
 
 export function Engage({
   id,
-  patternImage,
   copy,
 }: {
   id?: string;
-  patternImage: string;
   copy: {
     title: string;
     speakingKicker: string;
@@ -21,7 +19,7 @@ export function Engage({
   return (
     <SectionShell
       id={id}
-      patternImage={patternImage}
+      watermarkLeft="right"
       className="bg-[#f4f6f8] py-14 sm:py-20"
     >
       <Container>

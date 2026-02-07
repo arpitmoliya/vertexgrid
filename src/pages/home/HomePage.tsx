@@ -43,30 +43,25 @@ export function HomePage() {
 
       <WhatWeDo
         id="value"
-        patternImage={homeImages.pattern}
         copy={whatWeDoCopy}
       />
 
       <HowItWorks
         id="how-it-works"
-        patternImage={homeImages.pattern}
         copy={howItWorksCopy}
       />
 
       <RoomMatters
-        patternImage={homeImages.pattern}
         imageSrc={homeImages.roomMatters}
         copy={roomMattersCopy}
       />
 
       <Attendee
-        patternImage={homeImages.pattern}
         copy={attendeeCopy}
         onApplyToAttend={() => setOpenForm("executive")}
       />
 
       <Sponsorship
-        patternImage={homeImages.pattern}
         images={{
           handshake: homeImages.handshake,
           analytics: homeImages.analytics,
@@ -80,9 +75,9 @@ export function HomePage() {
         copy={nextEventCopy}
       />
 
-      <BuiltBy patternImage={homeImages.pattern} copy={builtByCopy} />
+      <BuiltBy copy={builtByCopy} />
 
-      <Engage patternImage={homeImages.pattern} copy={engageCopy} />
+      <Engage copy={engageCopy} />
 
       <CtaCard
         copy={ctaCardCopy}

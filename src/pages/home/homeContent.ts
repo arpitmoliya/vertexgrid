@@ -1,14 +1,14 @@
 export const homeImages = {
   /** Hero background (meeting room) */
-  hero: "/images/f58d3266ffe25589fcf925979aa72375b2c3ad2d.jpg",
+  hero: "/images/f58d3266ffe25589fcf925979aa72375b2c3ad2d.webp",
   /** Section background motif */
-  pattern: "/images/watermark.png",
+  pattern: "/images/watermark.webp",
   /** Photo: conference room workshop */
-  roomMatters: "/images/a51a015850a4c1efed42eeb5372d6678e521544a.png",
+  roomMatters: "/images/a51a015850a4c1efed42eeb5372d6678e521544a.webp",
   /** Photo: handshake */
-  handshake: "/images/a3a1da6720228ff10850a8a2e4ba273bca78578d.jpg",
+  handshake: "/images/a3a1da6720228ff10850a8a2e4ba273bca78578d.webp",
   /** Photo: analytics dashboard */
-  analytics: "/images/c4632d9746e9f78c974627a274546942a1f5a445.jpg",
+  analytics: "/images/c4632d9746e9f78c974627a274546942a1f5a445.webp",
 } as const;
 
 export const homeNav = [

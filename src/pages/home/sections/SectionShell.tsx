@@ -4,22 +4,26 @@ import { cn } from "../../../lib/cn";
 
 export function SectionShell({
   className,
-  patternImage,
+  watermarkLeft,
+  waterMarkSize = 560,
   ...props
-}: HTMLAttributes<HTMLElement> & { patternImage?: string }) {
+}: HTMLAttributes<HTMLElement> & {
+  watermarkLeft?: "left" | "right";
+  waterMarkSize?: number;
+}) {
   return (
     <section className={cn("relative overflow-hidden", className)} {...props}>
-      {patternImage ? (
+      {watermarkLeft ? (
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 mix-blend-multiply -right-1/6"
+          className="pointer-events-none absolute inset-0 mix-blend-multiply"
           style={{
-            backgroundImage: `url(${patternImage})`,
-            backgroundRepeat: "repeat-y",
-            backgroundPosition: "center right",
-            // Use a fixed-ish watermark size so it shows in "empty" space
-            // without taking over the whole section.
-            backgroundSize: "min(1100px, 92vw) auto",
+            backgroundImage: `url(/images/watermark.webp)`,
+            backgroundPosition:
+              watermarkLeft === "left" ? "left center" : "right center",
+            backgroundSize: `${waterMarkSize}px ${waterMarkSize}px`,
+            backgroundRepeat: "no-repeat",
+            backgroundBlendMode: "multiply",
           }}
         />
       ) : null}

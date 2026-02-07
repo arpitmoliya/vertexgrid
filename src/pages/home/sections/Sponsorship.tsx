@@ -46,13 +46,11 @@ function BulletList({
 
 export function Sponsorship({
   id,
-  patternImage,
   images,
   copy,
   onApplyAsSponsor,
 }: {
   id?: string;
-  patternImage: string;
   images: { handshake: string; analytics: string };
   copy: {
     title: string;
@@ -72,7 +70,8 @@ export function Sponsorship({
   return (
     <SectionShell
       id={id}
-      patternImage={patternImage}
+      watermarkLeft="right"
+      waterMarkSize={1000}
       className="bg-[#f4f6f8] py-14 sm:py-20"
     >
       <Container>
@@ -121,7 +120,7 @@ export function Sponsorship({
               />
             </div>
 
-            <Card className="rounded-3xl border-zinc-200/60 bg-white p-7 shadow-soft h-fit">
+            <Card className="rounded-3xl border-zinc-200/60 bg-white p-7 shadow-soft h-full">
               <div className="text-2xl font-semibold text-brand">
                 Intelligence you can't buy from traditional analyst reports.
               </div>

@@ -5,12 +5,10 @@ import { SectionShell } from "./SectionShell";
 
 export function RoomMatters({
   id,
-  patternImage,
   imageSrc,
   copy,
 }: {
   id?: string;
-  patternImage: string;
   imageSrc: string;
   copy: {
     titlePrefix: string;
@@ -24,7 +22,8 @@ export function RoomMatters({
   return (
     <SectionShell
       id={id}
-      patternImage={patternImage}
+      watermarkLeft="right"
+      waterMarkSize={700}
       className="bg-[#f4f6f8] py-14 sm:py-20"
     >
       <Container>

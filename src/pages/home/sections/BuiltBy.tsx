@@ -4,11 +4,9 @@ import { SectionShell } from "./SectionShell";
 
 export function BuiltBy({
   id,
-  patternImage,
   copy,
 }: {
   id?: string;
-  patternImage: string;
   copy: {
     titlePrefix: string;
     titleBrand: string;
@@ -22,7 +20,8 @@ export function BuiltBy({
   return (
     <SectionShell
       id={id}
-      patternImage={patternImage}
+      watermarkLeft="left"
+      waterMarkSize={600}
       className="bg-[#f4f6f8] py-14 sm:py-20"
     >
       <Container>
