@@ -1,5 +1,14 @@
 import { z } from "zod";
 
+const urlOptional = z
+  .string()
+  .trim()
+  .optional()
+  .or(z.literal(""))
+  .refine((v) => !v || /^https?:\/\//i.test(v), {
+    message: "Please enter a valid URL (must start with http:// or https://).",
+  });
+
 export const executiveSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required."),
   lastName: z.string().trim().min(1, "Last name is required."),
@@ -13,14 +22,7 @@ export const executiveSchema = z.object({
     .refine((v) => /^[0-9+\-() ]+$/.test(v), {
       message: "Phone number contains invalid characters.",
     }),
-  linkedinUrl: z
-    .string()
-    .trim()
-    .min(1, "LinkedIn profile URL is required.")
-    .refine((v) => /^https?:\/\//i.test(v), {
-      message:
-        "Please enter a valid URL (must start with http:// or https://).",
-    }),
+  linkedinUrl: urlOptional,
   panelSpeakerInterest: z.string().trim().optional().or(z.literal("")),
   currentRole: z.string().trim().min(1, "Please select your current role."),
   currentRoleOther: z.string().trim().optional().or(z.literal("")),

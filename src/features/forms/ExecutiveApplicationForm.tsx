@@ -203,7 +203,7 @@ export function ExecutiveApplicationForm({
       </div>
 
       <div>
-        <FieldLabel required>LinkedIn Profile URL</FieldLabel>
+        <FieldLabel>LinkedIn Profile URL (optional)</FieldLabel>
         <TextInput
           placeholder="https://linkedin.com/in/yourprofile"
           {...register("linkedinUrl")}
