@@ -65,21 +65,21 @@ export function Hero({
           </div>
         </div>
 
-        <div className="mt-14 max-w-3xl pb-10 sm:mt-20 sm:pb-14">
-          <h1 className="text-balance text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
+        <div className="mt-14 pb-10 sm:mt-20 sm:pb-14">
+          <h1 className="text-balance text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
             {copy.headline}
           </h1>
 
-          <p className="mt-6 text-balance text-2xl font-semibold leading-snug text-white sm:text-3xl">
+          <p className="mt-6 max-w-3xl text-balance text-2xl font-semibold leading-snug text-white sm:text-3xl">
             {copy.subheadline}
           </p>
 
-          <div className="mt-6 space-y-4 text-sm leading-6 text-white/80 sm:text-base">
+          <div className="mt-6 max-w-3xl space-y-4 text-sm leading-6 text-white/80 sm:text-base">
             <p>{copy.bodyTop}</p>
             <p>{copy.bodyBottom}</p>
           </div>
 
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-10 max-w-3xl flex flex-col gap-3 sm:flex-row">
             <Button
               size="md"
               variant="secondary"
